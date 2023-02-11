@@ -20,12 +20,12 @@ for (let i = 0; i<n; i++){
 }
 
 function processColumn(column) { 
-    // I need here to write a function to fo through all of elements in column but this one probably doesn't do it for elemeins in column
   let longestSequence = 0; 
   let currentSequence = 0;
   for (let i = 0; i < column.length; i++) { 
       if (column[i] >= column[i-1]) { 
-        currentSequence++; } 
+        currentSequence++; 
+      } 
       else { 
         longestSequence = Math.max(longestSequence, currentSequence); 
         currentSequence = 1;
