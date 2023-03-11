@@ -1,0 +1,22 @@
+let m = parseInt(prompt('Enter m: '));
+let q = 1;
+
+console.time('Time of work')
+for (let b = 2; b <= m; b++) {
+  q *= (1 / (2 * b - 1));
+}
+console.timeEnd('Time of work');
+console.log('Without recursion:', q.toString().substring(0, 10), "\n");
+
+
+function Recursion(m, b) {
+  if (b === m) {
+    return (1 / (2 * b - 1));
+  } 
+  else {
+    return (1 / (2 * b - 1) * Recursion(m, b + 1));
+  }
+}
+console.time('Time of work')
+console.log('With recursion:', Recursion(m, 2).toString().substring(0, 10));
+console.timeEnd('Time of work')
